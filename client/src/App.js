@@ -5,6 +5,7 @@ import HomePage from "./components/HomePage";
 import MovieList from "./components/MovieList";
 import RateMovie from "./components/RateMovie";
 import RequestReco from "./components/RequestReco";
+import MovieSearch from "./components/MovieSearch";
 
 function App() {
   return (
@@ -22,6 +23,9 @@ function App() {
               <Link to="/list">Liste des films</Link>
             </li>
             <li>
+              <Link to="/search">Rechercher un film</Link>
+            </li>
+            <li>
               <Link to="/rate">Noter un film</Link>
             </li>
             <li>
@@ -35,17 +39,20 @@ function App() {
           <Route path="/demo">
             <PokemonDisplayer />
           </Route>
-          <Route path="/">
-            <HomePage />
-          </Route>
-          <Route path="/liste">
+          <Route path="/list">
             <MovieList />
           </Route>
-          <Route>
+          <Route path="/search">
+            <MovieSearch />
+          </Route>
+          <Route path="/rate">
             <RateMovie />
           </Route>
-          <Route>
+          <Route path="/Reco">
             <RequestReco />
+          </Route>
+          <Route path="/">
+            <HomePage />
           </Route>
         </Switch>
       </div>
