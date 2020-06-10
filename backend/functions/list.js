@@ -13,7 +13,7 @@ module.exports.handle = async event => {
             '#type': 'type'
         },
         ExpressionAttributeValues: {
-            ':type': 'items',
+            ':type': 'Movie',
         },
     }).promise();
 
