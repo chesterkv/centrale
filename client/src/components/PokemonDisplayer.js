@@ -9,7 +9,7 @@ const PokemonDisplayer = () => {
 
   const fetchExample = async () => {
     try {
-      const response = await fetch("http://www.omdbapi.com/?t=%22star%20wars%22&apikey=b8e43d5f");
+      const response = await fetch("https://y9ol4o92xk.execute-api.eu-west-1.amazonaws.com/dev/items/");
       const responseJson = await response.json();
       console.log({responseJson})
       setIsLoaded(true);
@@ -37,7 +37,9 @@ const PokemonDisplayer = () => {
       return (
         <ul>
           <li>
-            {items.Title}
+            {items.map((item) => (
+              <li key={item.name}>{item.name}</li>
+            ))}
           </li>
         </ul>
       );

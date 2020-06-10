@@ -44,6 +44,16 @@ functions:
             origin: http://localhost:3000
             allowCredentials: true
 
+  rating:
+    handler: functions/rating.handle
+    events:
+      - http:
+          method: post
+          path: items
+          cors:
+            origin: http://localhost:3000
+            allowCredentials: true
+
   list:
     handler: functions/list.handle
     events:

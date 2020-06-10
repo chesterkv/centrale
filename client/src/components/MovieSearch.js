@@ -1,14 +1,17 @@
 import React, { useState, useEffect } from "react";
 
 import { withKnobs } from "@storybook/addon-knobs";
+import { get } from "https";
 
 const SearchMovie = () => {
     const input_movie = React.createRef();
-    const url="https://ponm8ld221.execute-api.eu-west-1.amazonaws.com/dev/";
+    const url="https://y9ol4o92xk.execute-api.eu-west-1.amazonaws.com/dev/items/";
     const handleSubmit = async (event) => {
         alert ("Your query for " + input_movie.current.value + " has been taken into account");
         event.preventDefault();
-        const response= await fetch(url
+        const response= await fetch(url+input_movie.current.value,{
+          method: "get"
+        });
         const responseJSON = await response.json();
         console.log(responseJSON);
         

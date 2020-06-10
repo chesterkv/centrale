@@ -13,7 +13,7 @@ module.exports.handle = async event => {
     const item = {
         type: 'Movie',
         uuid: uuid.v1(),
-        name: 'blade runner',
+        name: data.name,
         CreatedAt : Date.now()
     }
 
@@ -24,6 +24,10 @@ module.exports.handle = async event => {
 
     return {
         statusCode: 200,
+        headers: {
+            'Access-Control-Allow-Origin': 'http://localhost:3000',
+            'Access-Control-Allow-Credentials': 'true',
+          },
         body: JSON.stringify(item),
     }
 }
