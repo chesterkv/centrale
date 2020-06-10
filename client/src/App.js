@@ -6,6 +6,7 @@ import MovieList from "./components/MovieList";
 import RateMovie from "./components/RateMovie";
 import RequestReco from "./components/RequestReco";
 import MovieSearch from "./components/MovieSearch";
+import "./App.css";
 
 function App() {
   return (

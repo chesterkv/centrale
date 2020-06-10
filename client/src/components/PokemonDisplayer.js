@@ -9,7 +9,9 @@ const PokemonDisplayer = () => {
 
   const fetchExample = async () => {
     try {
-      const response = await fetch("http://www.omdbapi.com/?t=%22star%20wars%22&apikey=b8e43d5f");
+      const response = await fetch("https://jk7m2nfn96.execute-api.eu-west-1.amazonaws.com/dev/items", {
+        method:'get',
+      });
       const responseJson = await response.json();
       console.log({responseJson})
       setIsLoaded(true);
@@ -30,15 +32,15 @@ const PokemonDisplayer = () => {
 
   const displayPokemons = () => {
     if (error) {
-      return <div>Error: {error.message}</div>;
+      return <div>Error:{error.message}</div>;
     } else if (!isLoaded) {
       return <div>Loading...</div>;
     } else {
       return (
         <ul>
-          <li>
-            {items.Title}
-          </li>
+          {items.map((item) => (
+            <li key={item.name}>{item.name}</li>
+          ))}
         </ul>
       );
     }
