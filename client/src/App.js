@@ -17,10 +17,7 @@ function App() {
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/demo">API Fetch demo</Link>
-            </li>
-            <li>
-              <Link to="/list">Liste des films</Link>
+              <Link to="/demo">Liste des films</Link>
             </li>
             <li>
               <Link to="/search">Rechercher un film</Link>
@@ -38,9 +35,6 @@ function App() {
         <Switch>
           <Route path="/demo">
             <PokemonDisplayer />
-          </Route>
-          <Route path="/list">
-            <MovieList />
           </Route>
           <Route path="/search">
             <MovieSearch />

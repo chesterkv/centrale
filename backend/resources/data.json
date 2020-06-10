@@ -5,7 +5,7 @@
                 "Item": {
                     "type": {"S":"Movie"},
                     "uuid": {"S":"1"},
-                    "name": {"S":"Avengers"},
+                    "name": {"S": "Avengers"},
                     "Year": {"S":"2012"},
                     "Rated": {"S":"PG-13"},
                     "Released": {"S":"04 May 2012"},

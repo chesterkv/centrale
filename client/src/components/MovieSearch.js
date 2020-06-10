@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
-
-import { withKnobs } from "@storybook/addon-knobs";
-import { get } from "https";
-
+const displayPokemons = (film) => {
+      console.log({film});
+        return (<div>{film?.Country}</div>)
+    };  
 const SearchMovie = () => {
     const input_movie = React.createRef();
+    const [film, setfilm] = useState(null);
     const url="https://y9ol4o92xk.execute-api.eu-west-1.amazonaws.com/dev/items/";
     const handleSubmit = async (event) => {
         alert ("Your query for " + input_movie.current.value + " has been taken into account");
@@ -13,12 +14,13 @@ const SearchMovie = () => {
           method: "get"
         });
         const responseJSON = await response.json();
-        console.log(responseJSON);
-        
-    };
-
-    return (
+        setfilm(responseJSON);
+        console.log({responseJSON});
+      };
     
+        
+    return (
+      <div>
         <form onSubmit={handleSubmit}>
           <label>
             Movie : 
@@ -26,8 +28,13 @@ const SearchMovie = () => {
           </label>
         <input type="submit" value="Search" />
         </form>
+        <div>
+          {displayPokemons(film)}
+        </div>
+      </div>
 
     );
-};
+  
+}
 
 export default SearchMovie;

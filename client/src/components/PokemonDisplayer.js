@@ -36,11 +36,9 @@ const PokemonDisplayer = () => {
     } else {
       return (
         <ul>
-          <li>
             {items.map((item) => (
               <li key={item.name}>{item.name}</li>
             ))}
-          </li>
         </ul>
       );
     }
