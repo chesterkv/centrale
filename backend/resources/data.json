@@ -1,0 +1,32 @@
+{
+    "cs-group-7-charlesl-dynamodb": [
+        {
+            "PutRequest": {
+                "Item": {
+                    "type": {"S":"Movie"},
+                    "uuid": {"S":"1"},
+                    "name": {"S":"Avengers"}
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "type": {"S":"Movie"},
+                    "uuid": {"S":"2"},
+                    "name": {"S":"Transformers"}
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "type": {"S":"Movie"},
+                    "uuid": {"S":"3"},
+                    "name": {"S":"star wars"}
+                }
+            }
+        }
+    ]
+}
+
