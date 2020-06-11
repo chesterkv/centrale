@@ -48,7 +48,7 @@ functions:
     handler: functions/rating.handle
     events:
       - http:
-          method: post
+          method: put
           path: items
           cors:
             origin: http://localhost:3000

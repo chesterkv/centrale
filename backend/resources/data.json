@@ -100,7 +100,8 @@
             "PutRequest": {
                 "Item": {
                     "type": {"S":"user"},
-                    "name": {"S":"PseudoVassili"}
+                    "name": {"S":"PseudoVassili"},
+                    "ratings":{"L":[]}
                 }
             }
         },

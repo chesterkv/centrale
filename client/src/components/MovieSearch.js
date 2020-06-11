@@ -1,14 +1,22 @@
 import React, { useState, useEffect } from "react";
+import {useHistory} from "react-router-dom";
+
+
+
 const displayPokemons = (film) => {
       console.log({film});
-        return (<div>{film?.Country}</div>)
+        return (<div>{film?.name}</div>)
     };  
+
+
 const SearchMovie = () => {
+    const [movieName,setmovieName]=useState();
     const input_movie = React.createRef();
     const [film, setfilm] = useState(null);
-    const url="https://y9ol4o92xk.execute-api.eu-west-1.amazonaws.com/dev/items/";
+    const url="https://99doeod1u0.execute-api.eu-west-1.amazonaws.com/dev/items/";
     const handleSubmit = async (event) => {
         alert ("Your query for " + input_movie.current.value + " has been taken into account");
+        setmovieName(input_movie.current.value);
         event.preventDefault();
         const response= await fetch(url+input_movie.current.value,{
           method: "get"
@@ -36,5 +44,6 @@ const SearchMovie = () => {
     );
   
 }
+
 
 export default SearchMovie;
