@@ -2,10 +2,10 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import PokemonDisplayer from "./components/PokemonDisplayer";
 import HomePage from "./components/HomePage";
-import MovieList from "./components/MovieList";
 import RateMovie from "./components/RateMovie";
 import RequestReco from "./components/RequestReco";
 import MovieSearch from "./components/MovieSearch";
+import bootstrap.css
 
 function App() {
   return (
